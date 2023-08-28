@@ -192,6 +192,7 @@ Auxiliary Matcher (AM) was created in case user's query doesn't match any submis
 ### Known Limitations
 - The movies presented in search results come from Full MovieLens Dataset. The dataset consists of movies released on or before July 2017. This makes latest movie releases absent from the recommendations, also accounting for some occasional unexpected results (for instance presenting older movies titles - sometimes unrelated to the topic - who just happened to share the title with a new release, missing from the movie db).
 - The system sometimes produces incorrect (unrelated) recommendations. NER model used to extract titles from submissions and corresponding comments is known to sometimes struggle with the free form style of the utterences. For this reasons some of the extracted titles, and therefore also recommendations based on them, may be wrong.
+- The backend runs on AWS' EC2 instance t2.medium with 4GB of RAM so it's not a deamon of speed :) It takes up to several seconds to generate results for single request.
 
 
 ## Let's Dive In!

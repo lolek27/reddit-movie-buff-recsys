@@ -33,7 +33,7 @@ Reddit Movie Buff system comprises several elements:
  3.1. Suggestion Generation
  3.2. Prunning of the results
 
-![architecture drawio](https://github.com/lolek27/reddit-movie-buff/assets/12550403/ed76da06-56a4-474f-afbd-c035f8bc601d)
+![architecture drawio](https://github.com/lolek27/reddit-movie-buff-recsys/assets/12550403/f34c224e-3508-4730-b61b-86a5aa22e189)
 
 
 Before we go over the recommender engine in details, lets understand the underlying data.
@@ -48,7 +48,7 @@ The system rests upon two sets of data:
  (*Note: every example in this documentation comes from r/MovieSuggestions subreddit and contains original spelling, phrasing etc*):
 
 
-![submission-comments drawio](https://github.com/lolek27/reddit-movie-buff/assets/12550403/f537c14d-31ab-46d7-a3ae-3dd6a727c986)
+![submission-comments drawio](https://github.com/lolek27/reddit-movie-buff-recsys/assets/12550403/7e303e87-f7d1-4c31-8296-f023df12387c)
 
 
  To be able to compare user's query to existing submissions and serve respective movie recommendations we transform the submissions and comments in the following way:
@@ -59,7 +59,7 @@ The system rests upon two sets of data:
   - finally we normalize the weights to be able to compare and combine them with movies from different submission when generating results
 3. Factoring in the above results in ranking of movies which we keep along with the corresponding submission
 
-![submission drawio](https://github.com/lolek27/reddit-movie-buff/assets/12550403/29f15e37-211a-42d2-87dd-58faff39a0c2)
+![submission drawio](https://github.com/lolek27/reddit-movie-buff-recsys/assets/12550403/06e1758f-b70c-49d1-8d9a-44d6aaddcce8)
 
 ### 1.1. Title Extraction
 Extracting titles can be phrased as a NER (Named Entity Recognition) problem and as such is considered difficult because of the free style of reddit's utterences. Consider given examples of comment:
@@ -152,7 +152,8 @@ the last encoder layer is then used as input for a linear classification layer t
 2. The training set comprises of over **55k pairs of requests (submissions)**. This training set was created from the initial 78k dataset of pairs by balancing it (removing some of the positive class pairs). The fine-tuning started with high recall and gradually built toward higher precision. The best overall metrics were achieved for 6th epoch of training, with:
 **accuracy: 0.76**, **F1-score for positive class, precision and recall** all on level of **0.78**.
 
-![bert_ft](https://github.com/lolek27/reddit-movie-buff/assets/12550403/28e98e79-1f08-471c-862a-4138b1facc1c)
+![bert_ft](https://github.com/lolek27/reddit-movie-buff-recsys/assets/12550403/d3d6020c-3840-41ec-b19e-21c9e543202b)
+
 
 #### B.SetFit
 
@@ -168,8 +169,8 @@ Additionally, in MNRL loss the assumption is for every (a_i, p_i) pair every oth
 
 3. The SetFit training produced a classificator with slightly better results than those of BERT:
 **accuracy: 0.79**, **F1-score for positive class: 0.812, Precision: 0.805 and Recall: 0.82**.
-![setfit_ft](https://github.com/lolek27/reddit-movie-buff/assets/12550403/050da1e4-254b-496d-8d89-4c5ab0ce0fc9)
 
+![setfit_ft](https://github.com/lolek27/reddit-movie-buff-recsys/assets/12550403/545ae40d-a2fd-44af-9d0c-59c99de09655)
 
 ### 2.3. Compose set of recommendations based on similar submissions
 
@@ -192,12 +193,12 @@ Auxiliary Matcher (AM) was created in case user's query doesn't match any submis
 ### Known Limitations
 - The movies presented in search results come from Full MovieLens Dataset. The dataset consists of movies released on or before July 2017. This makes latest movie releases absent from the recommendations, also accounting for some occasional unexpected results (for instance presenting older movies titles - sometimes unrelated to the topic - who just happened to share the title with a new release, missing from the movie db).
 - The system sometimes produces incorrect (unrelated) recommendations. NER model used to extract titles from submissions and corresponding comments is known to sometimes struggle with the free form style of the utterences. For this reasons some of the extracted titles, and therefore also recommendations based on them, may be wrong.
-- The backend runs on AWS' EC2 instance t2.medium with 4GB of RAM so it's not a deamon of speed :) It takes up to several seconds to generate results for single request.
+- The backend runs on AWS' EC2 instance t2.large with 8GB of RAM so it's not a deamon of speed :) It takes up to several seconds to generate results for single request.
 
 
 ## Let's Dive In!
 
-Jump over to [www.redditmoviebuff.com](http://www.redditmoviebuff.com) and let's make your movie nights epic! 🚀🎉
+Jump over to [this website](https://lolek27.github.io/reddit-movie-buff/) and let's make your movie nights epic! 🚀🎉
 
 Stay cool and enjoy the show!
 

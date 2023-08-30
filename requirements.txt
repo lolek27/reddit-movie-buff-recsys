@@ -1,0 +1,11 @@
+fastapi==0.101.1
+gunicorn==21.2.0
+numpy==1.24.2
+pydantic==1.10.6
+scann==1.2.10
+sentence_transformers==2.2.2
+setfit==0.7.0
+transformers==4.26.1
+uvicorn==0.23.2
+tinydb==4.8.0
+simstring-pure==1.0.0

@@ -10,7 +10,7 @@ I'm Aleksandra, the movie-loving mind behind Reddit Movie Buff. As a dedicated c
 
 ## How It Works
 
-No fuss, no frills. Hop onto 🌐 [Reddit Movie Buff's website](https://pages.github.com/). Type in your movie request, like you're chatting on Reddit. Hit that button and boom! Our AI engine kicks in, whipping up a list of awesome movie suggestions that match your request.
+No fuss, no frills. Hop onto 🌐 [Reddit Movie Buff's website](https://lolek27.github.io/reddit-movie-buff/). Type in your movie request, like you're chatting on Reddit. Hit that button and boom! Our AI engine kicks in, whipping up a list of awesome movie suggestions that match your request.
 
 ## Behind the Scenes
 

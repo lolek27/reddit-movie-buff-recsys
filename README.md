@@ -137,7 +137,15 @@ Two binary classificators were fine-tuned and compared for the task of prunning:
 
  B. SetFit
 
- If we included Req B in the result set we might get back romances which are undesirable for this request. That's why we go through the prunning procedure. The binary classificator's task is to get rid of requests that in some way go against the user's query.
+Below is the overall comparison of two selected classifier - SetFit and BERT (which has been trained twice, on the training set and on augmented training set).
+The area under the ROC curve (AUC-ROC) summarizes the performance of each of the classifiers. The performance achieved is as followed (in order):
+1. SetFit - AUC-ROC 0.871
+2. BERT (augmented) - 0.84
+3. BERT - 0.836
+
+A higher AUC-ROC value (closer to 1) suggests better classification performance, while 0.5 indicates random chance (no discrimination). Values above 0.8 are considered to belong to well trained classifiers.
+
+![auc-roc](https://github.com/lolek27/reddit-movie-buff-recsys/assets/12550403/4d6ca697-c88d-4b39-a70d-02299849a435)
 
  
 

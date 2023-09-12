@@ -2,6 +2,8 @@
 
 Hey movie buffs! 🍿 Tired of hunting for your next movie night pick? Meet **Reddit Movie Buff** – your AI-powered movie buddy that makes choosing flicks a breeze. Whether you're craving a heart-pounding thriller or a feel-good rom-com, Reddit Movie Buff has got your back.
 Think of Reddit Movie Buff as a smart twist on r/MovieSuggestions. It's a cool machine learning project that's all about suggesting movies you'll love – just like the Reddit crew does!
+![Screenshot 2023-09-12 140702](https://github.com/lolek27/reddit-movie-buff-recsys/assets/12550403/87890004-f4d8-4f99-841f-8e5067bb0dc1)
+
 
 ## 🎥 Created by a Movie Lover and Machine Learning Enthusiast
 
